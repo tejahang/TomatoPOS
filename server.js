@@ -3,6 +3,7 @@ import cors from "cors"; // cross origin resource sharing
 import fs from "node:fs";
 import { log } from "node:console";
 import mongoose from "mongoose";
+import billingRoutes from "./BillingRoutes.js";
 
 const mongoURI ="mongodb+srv://redmenIshab:2D5KPigID2s24CsD@mern-mmamc.iobwd2h.mongodb.net/";
 
@@ -74,6 +75,10 @@ app.post("/orders/:table_no", (req, res) => {
 //
 
 /*-----------------------------------------------------*/
+
+
+
+app.use("/billing", billingRoutes)
 
 app.listen(3000, () => {
   console.log("running on port 3000");
